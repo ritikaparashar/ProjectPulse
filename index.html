@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ProjectPulse</title>
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">ProjectPulse</p>
+          <h1 id="page-title">A browser-based project tracker built with plain JavaScript.</h1>
+          <p class="hero-text">
+            Track work across planning, active, blocked, and completed stages with persistent local state.
+          </p>
+        </div>
+
+        <div class="hero-visual" aria-label="Dashboard preview">
+          <div class="window-bar" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="preview-grid" aria-hidden="true">
+            <div class="preview-card wide"></div>
+            <div class="preview-card"></div>
+            <div class="preview-card warm"></div>
+            <div class="preview-card tall"></div>
+            <div class="preview-card cool"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="Project controls">
+        <form id="item-form" class="item-form">
+          <div class="field field-wide">
+            <label for="item-title">Work item</label>
+            <input id="item-title" name="title" type="text" placeholder="Build responsive navigation" autocomplete="off" required>
+          </div>
+
+          <div class="field">
+            <label for="item-owner">Owner</label>
+            <input id="item-owner" name="owner" type="text" placeholder="Ritika" autocomplete="off" required>
+          </div>
+
+          <div class="field">
+            <label for="item-status">Status</label>
+            <select id="item-status" name="status">
+              <option value="planned">Planned</option>
+              <option value="active">Active</option>
+              <option value="blocked">Blocked</option>
+              <option value="done">Done</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="item-priority">Priority</label>
+            <select id="item-priority" name="priority">
+              <option value="high">High</option>
+              <option value="medium" selected>Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+
+          <button type="submit">Add Item</button>
+        </form>
+
+        <div class="filters">
+          <div class="field field-search">
+            <label for="search-input">Search</label>
+            <input id="search-input" type="search" placeholder="Search title or owner">
+          </div>
+
+          <div class="filter-buttons" role="group" aria-label="Status filters">
+            <button class="filter-button active" type="button" data-filter="all">All</button>
+            <button class="filter-button" type="button" data-filter="planned">Planned</button>
+            <button class="filter-button" type="button" data-filter="active">Active</button>
+            <button class="filter-button" type="button" data-filter="blocked">Blocked</button>
+            <button class="filter-button" type="button" data-filter="done">Done</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Project summary">
+        <article class="metric-card">
+          <span>Total Items</span>
+          <strong id="total-count">0</strong>
+        </article>
+        <article class="metric-card">
+          <span>Completion</span>
+          <strong id="completion-rate">0%</strong>
+        </article>
+        <article class="metric-card">
+          <span>Blocked</span>
+          <strong id="blocked-count">0</strong>
+        </article>
+        <article class="metric-card">
+          <span>High Priority</span>
+          <strong id="priority-count">0</strong>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <section class="board" aria-label="Project board">
+          <div class="board-column" data-column="planned">
+            <h2>Planned</h2>
+            <ul id="planned-list" class="item-list"></ul>
+          </div>
+          <div class="board-column" data-column="active">
+            <h2>Active</h2>
+            <ul id="active-list" class="item-list"></ul>
+          </div>
+          <div class="board-column" data-column="blocked">
+            <h2>Blocked</h2>
+            <ul id="blocked-list" class="item-list"></ul>
+          </div>
+          <div class="board-column" data-column="done">
+            <h2>Done</h2>
+            <ul id="done-list" class="item-list"></ul>
+          </div>
+        </section>
+
+        <aside class="insights" aria-label="Project insights">
+          <div>
+            <p class="eyebrow">Status Mix</p>
+            <h2>Live Workload</h2>
+          </div>
+          <canvas id="status-chart" width="320" height="220" aria-label="Status distribution chart"></canvas>
+          <div class="insight-actions">
+            <button id="seed-button" type="button">Load Sample Data</button>
+            <button id="clear-button" type="button">Clear Board</button>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
