@@ -4,6 +4,10 @@ ProjectPulse is a dependency-free JavaScript project tracker that runs directly 
 
 **Live Demo:** [ritikaparashar.github.io/ProjectPulse](https://ritikaparashar.github.io/ProjectPulse/)
 
+## Preview
+
+![ProjectPulse dashboard preview](screenshots/projectpulse-dashboard.png)
+
 ## Overview
 
 ProjectPulse is built with plain HTML, CSS, and JavaScript to demonstrate strong front-end fundamentals without relying on a framework or build tool. The app focuses on practical product behavior: adding work items, moving them across workflow stages, filtering the board, tracking completion, and preserving data locally between sessions.
@@ -38,6 +42,8 @@ ProjectPulse/
 ├── index.html
 ├── scripts/
 │   └── app.js
+├── screenshots/
+│   └── projectpulse-dashboard.png
 ├── styles/
 │   └── main.css
 ├── basics/
