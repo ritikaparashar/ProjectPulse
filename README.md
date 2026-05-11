@@ -16,7 +16,7 @@ ProjectPulse is a dependency-free JavaScript project tracker that runs in the br
 ## Project Structure
 
 ```text
-js-web/
+ProjectPulse/
   index.html
   scripts/
     app.js
@@ -64,7 +64,7 @@ http://localhost:5173
 node basics/test.js
 ```
 
-## Next Ideas
+## Possible Extensions
 
 - Add drag-and-drop between columns.
 - Add due dates and sorting.
